@@ -25,10 +25,8 @@ export default {
         helper() {
             let links = document.getElementsByClassName('inter-link')
             let handle = this.handleClick
-            console.log("upd")
             for (let l of links) {
                 l.onclick = function(node) {
-                    console.log(l)
                     return function() {
                         handle(node)
                     }
@@ -36,7 +34,6 @@ export default {
             }
         },
         handleClick(node) {
-            console.log("test", node)
             this.$store.commit(GET_MAN_HTML, {
                 section: node.dataset.section,
                 query: node.dataset.item
